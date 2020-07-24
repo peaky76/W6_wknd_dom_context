@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Album Reviews</title>
     <script src="js/app.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
   </head>
   <body>
@@ -14,22 +17,22 @@
     <form id="form-album-entry">
       <div class="form-item">
         <label for="title-input">Title</label>
-        <input id="title-input" type="text" name="title" />
+        <input id="title-input" class="input-long" type="text" name="title" />
       </div>
 
       <div class="form-item">
         <label for="artist-input">Artist</label>
-        <input id="artist-input" type="text" name="artist" />
+        <input id="artist-input" class="input-long" type="text" name="artist" />
       </div>
 
       <div class="form-item">
         <label for="year-input">Year</label>
-        <input id="year-input" type="text" name="year" />
+        <input id="year-input" class="input-short" type="text" name="year" />
       </div>
 
       <div class="form-item">
-        <label for="genre">Genre</labelf>
-        <select id="genre" name="genre">
+        <label for="genre-input">Genre</label>
+        <select id="genre-input" name="genre">
           <option value="pop">Pop</option>
           <option value="rock">Rock</option>
           <option value="folk">Folk</option>
@@ -39,7 +42,12 @@
 
       <div class="form-item">
         <label for="rating-input">Rating</label>
-        <input id="rating-input" type="text" name="rating" />
+        <input
+          id="rating-input"
+          class="input-short"
+          type="text"
+          name="rating"
+        />
       </div>
 
       <div id="form-buttons" class="form-item">
@@ -48,11 +56,15 @@
       </div>
     </form>
 
+    <hr />
+
     <form id="form-album-list">
       <ul id="album-list">
         <!-- No albums listed -->
       </ul>
-      <input id="btn-delete-all" type="reset" value="Delete all" />
+      <div id="form-buttons" class="form-item">
+        <input id="btn-delete-all" type="reset" value="Delete all" />
+      </div>
     </form>
   </body>
 </html>

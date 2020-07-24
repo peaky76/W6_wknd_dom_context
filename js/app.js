@@ -29,14 +29,24 @@ const createNewAlbumElement = function (info) {
   const artist = createAlbumDetailListItem(info.artist.value, "artist");
   const year = createAlbumDetailListItem(info.year.value, "year");
   const genre = createAlbumDetailListItem(info.genre.value, "genre");
-  const rating = createAlbumDetailListItem(info.rating.value, "rating");
-  const details = [title, artist, year, rating];
+  const rating = createStarRating(info.rating.value, "rating");
+  const details = [title, artist, year, genre, rating];
 
   details.forEach((item) => newAlbum.appendChild(item));
   newAlbum.appendChild(title);
   newAlbumContainer.appendChild(newAlbum);
 
   return newAlbumContainer;
+};
+
+const createStarRating = function (rating, id) {
+  listItem = document.createElement("li");
+  listItem.classList.add("album-detail");
+  listItem.id = id;
+  full_stars = "\u2605".repeat(rating);
+  empty_stars = "\u2606".repeat(5 - rating);
+  listItem.textContent = full_stars.concat(empty_stars);
+  return listItem;
 };
 
 const handleFormSave = function (e) {

@@ -9,9 +9,14 @@ ul {
   padding: 0;
 }
 
+hr {
+  margin: 1rem 0;
+}
+
 #form-album-entry {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 #form-buttons {
@@ -19,6 +24,11 @@ ul {
   flex-direction: row;
   justify-content: flex-start;
   width: 100%;
+  margin-top: 1rem;
+}
+
+#form-buttons > input {
+  margin-right: 1rem;
 }
 
 .form-item {
@@ -26,19 +36,30 @@ ul {
   flex-direction: column;
 }
 
+.input-long {
+  width: 16rem;
+}
+
+.input-short {
+  width: 4rem;
+}
+
 #form-album-list {
+  display: flex;
+  flex-direction: column;
   font-family: "Lora", serif;
 }
 
 #album-list > li {
   width: 50%;
+  margin-bottom: 1rem;
 }
 
 .album {
   display: flex;
   flex-wrap: wrap;
   background-color: #fafafa;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   padding: 0.5em;
 }
@@ -49,22 +70,31 @@ ul {
 
 #artist {
   order: 1;
-  flex-basis: 100%;
+  flex-basis: 80%;
   font-weight: bold;
   text-transform: uppercase;
 }
 
-#title {
+#genre {
   order: 2;
+  flex-basis: 20%;
+  font-variant: small-caps;
+  font-weight: bold;
+  color: #00a676;
+}
+
+#title {
+  order: 3;
   font-style: italic;
 }
 
 #year {
-  order: 3;
+  order: 4;
 }
 
 #year::before {
-  content: "\0020(";
+  content: " (";
+  white-space: pre;
 }
 
 #year::after {
@@ -72,6 +102,7 @@ ul {
 }
 
 #rating {
-  order: 4;
+  order: 5;
+  flex-basis: 100%;
   color: #f3a712;
 }

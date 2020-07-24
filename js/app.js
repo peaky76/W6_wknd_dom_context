@@ -11,16 +11,35 @@ document.addEventListener("DOMContentLoaded", () => {
   deleteAll.addEventListener("reset", handleListDelete);
 });
 
+const createAlbumDetailListItem = function (value) {
+  listItem = document.createElement("li");
+  listItem.classList.add("album-detail");
+  listItem.textContent = value;
+  return listItem;
+};
+
+const createNewAlbumElement = function (info) {
+  const newAlbumContainer = document.createElement("li");
+
+  const newAlbum = document.createElement("ul");
+  newAlbum.classList.add("album");
+
+  const title = createAlbumDetailListItem(info.title.value);
+  const artist = createAlbumDetailListItem(info.artist.value);
+  const rating = createAlbumDetailListItem(info.rating.value);
+  const details = [title, artist, rating];
+
+  details.forEach((item) => newAlbum.appendChild(item));
+  newAlbum.appendChild(title);
+  newAlbumContainer.appendChild(newAlbum);
+
+  return newAlbumContainer;
+};
+
 const handleFormSave = function (e) {
   e.preventDefault();
 
-  let title = this.title.value;
-  let artist = this.artist.value;
-  let rating = this.rating.value;
-
-  const newAlbum = document.createElement("li");
-  newAlbum.textContent = `title: ${title}, artist: ${artist}, rating: ${rating}`;
-
+  const newAlbum = createNewAlbumElement(this);
   const albumList = document.querySelector("#album-list");
   albumList.appendChild(newAlbum);
 };

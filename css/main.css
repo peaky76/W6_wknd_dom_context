@@ -1,4 +1,7 @@
 body {
+  background-color: #e6e6e6;
+  color: #272727;
+  font-family: "Staatliches", cursive;
 }
 
 ul {
@@ -6,8 +9,16 @@ ul {
   padding: 0;
 }
 
+#album-list {
+}
+
+#album-list > li {
+  width: 50%;
+}
+
 .album {
   display: flex;
+  flex-wrap: wrap;
   background-color: wheat;
   border: 2px solid black;
   border-radius: 10px;
@@ -20,6 +31,7 @@ ul {
 
 #artist {
   order: 1;
+  flex-basis: 100%;
   text-transform: uppercase;
 }
 
@@ -28,7 +40,19 @@ ul {
   font-style: italic;
 }
 
-#rating {
+#year {
   order: 3;
+}
+
+#year::before {
+  content: "\0020(";
+}
+
+#year::after {
+  content: ")";
+}
+
+#rating {
+  order: 4;
   color: goldenrod;
 }

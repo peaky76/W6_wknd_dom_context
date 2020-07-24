@@ -27,8 +27,10 @@ const createNewAlbumElement = function (info) {
 
   const title = createAlbumDetailListItem(info.title.value, "title");
   const artist = createAlbumDetailListItem(info.artist.value, "artist");
+  const year = createAlbumDetailListItem(info.year.value, "year");
+  const genre = createAlbumDetailListItem(info.genre.value, "genre");
   const rating = createAlbumDetailListItem(info.rating.value, "rating");
-  const details = [title, artist, rating];
+  const details = [title, artist, year, rating];
 
   details.forEach((item) => newAlbum.appendChild(item));
   newAlbum.appendChild(title);

@@ -11,9 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
   deleteAll.addEventListener("reset", handleListDelete);
 });
 
-const createAlbumDetailListItem = function (value) {
+const createAlbumDetailListItem = function (value, id) {
   listItem = document.createElement("li");
   listItem.classList.add("album-detail");
+  listItem.id = id;
   listItem.textContent = value;
   return listItem;
 };
@@ -24,9 +25,9 @@ const createNewAlbumElement = function (info) {
   const newAlbum = document.createElement("ul");
   newAlbum.classList.add("album");
 
-  const title = createAlbumDetailListItem(info.title.value);
-  const artist = createAlbumDetailListItem(info.artist.value);
-  const rating = createAlbumDetailListItem(info.rating.value);
+  const title = createAlbumDetailListItem(info.title.value, "title");
+  const artist = createAlbumDetailListItem(info.artist.value, "artist");
+  const rating = createAlbumDetailListItem(info.rating.value, "rating");
   const details = [title, artist, rating];
 
   details.forEach((item) => newAlbum.appendChild(item));

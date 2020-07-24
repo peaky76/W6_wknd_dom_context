@@ -9,7 +9,25 @@ ul {
   padding: 0;
 }
 
-#album-list {
+#form-album-entry {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#form-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#form-album-list {
+  font-family: "Lora", serif;
 }
 
 #album-list > li {
@@ -19,19 +37,20 @@ ul {
 .album {
   display: flex;
   flex-wrap: wrap;
-  background-color: wheat;
+  background-color: #fafafa;
   border: 2px solid black;
   border-radius: 10px;
   padding: 0.5em;
 }
 
 .album-detail {
-  color: darkolivegreen;
+  color: #aa1155;
 }
 
 #artist {
   order: 1;
   flex-basis: 100%;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -54,5 +73,5 @@ ul {
 
 #rating {
   order: 4;
-  color: goldenrod;
+  color: #f3a712;
 }

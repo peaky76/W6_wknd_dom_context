@@ -15,9 +15,15 @@ const handleFormSave = function (e) {
   let artist = this.artist.value;
   let rating = this.rating.value;
 
-  console.log(
-    `Form saved with title: ${title}, artist: ${artist}, rating: ${rating}`
-  );
+  const newAlbum = document.createElement("li");
+  newAlbum.textContent = `title: ${title}, artist: ${artist}, rating: ${rating}`;
+
+  const albumList = document.querySelector("#album-list");
+  albumList.appendChild(newAlbum);
+
+  //   console.log(
+  //     `Form saved with title: ${title}, artist: ${artist}, rating: ${rating}`
+  //   );
 };
 
 const handleFormCancel = function (e) {

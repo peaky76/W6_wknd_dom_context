@@ -30,4 +30,9 @@ const handleFormCancel = function (e) {
   console.log("Form cancelled");
 };
 
-const handleListDelete = function (e) {};
+const handleListDelete = function (e) {
+  const albumList = document.querySelector("#album-list");
+  while (albumList.firstChild) {
+    albumList.removeChild(albumList.firstChild);
+  }
+};

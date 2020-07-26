@@ -15,40 +15,39 @@
     <h1 id="heading-page">Album Reviews</h1>
 
     <form id="form-album-entry">
-      <div class="form-item">
-        <label for="title-input">Title</label>
+      <fieldset class="form-item">
+        <legend>Title</legend>
         <input id="title-input" class="input-long" type="text" name="title" />
-      </div>
+      </fieldset>
 
-      <div class="form-item">
-        <label for="artist-input">Artist</label>
+      <fieldset class="form-item">
+        <legend>Artist</legend>
         <input id="artist-input" class="input-long" type="text" name="artist" />
-      </div>
+      </fieldset>
 
-      <div class="form-item">
-        <label for="year-input">Year</label>
+      <fieldset class="form-item">
+        <legend>Year</legend>
         <input id="year-input" class="input-short" type="text" name="year" />
-      </div>
+      </fieldset>
 
-      <div class="form-item">
-        <label for="genre-input">Genre</label>
+      <fieldset class="form-item">
+        <legend>Genre</legend>
         <select id="genre-input" name="genre">
           <option value="pop">Pop</option>
           <option value="rock">Rock</option>
           <option value="folk">Folk</option>
           <option value="dance">Dance</option>
         </select>
-      </div>
+      </fieldset>
 
-      <div class="form-item">
-        <label for="rating-input">Rating</label>
-        <input
-          id="rating-input"
-          class="input-short"
-          type="text"
-          name="rating"
-        />
-      </div>
+      <fieldset class="form-item">
+        <legend>Rating</legend>
+        <input type="radio" id="one" name="rating" value="1" />1
+        <input type="radio" id="two" name="rating" value="2" />2
+        <input type="radio" id="three" name="rating" value="3" />3
+        <input type="radio" id="four" name="rating" value="4" />4
+        <input type="radio" id="five" name="rating" value="5" />5
+      </fieldset>
 
       <div id="form-buttons" class="form-item">
         <input id="btn-save" type="submit" value="Save" />

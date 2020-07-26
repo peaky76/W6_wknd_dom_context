@@ -55,11 +55,12 @@ const handleFormSave = function (e) {
   const newAlbum = createNewAlbumElement(this);
   const albumList = document.querySelector("#album-list");
   albumList.appendChild(newAlbum);
+
+  this.reset();
 };
 
 const handleFormCancel = function (e) {
-  e.preventDefault();
-  console.log("Form cancelled");
+  this.reset();
 };
 
 const handleListDelete = function (e) {
